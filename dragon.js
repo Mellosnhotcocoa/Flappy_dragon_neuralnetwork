@@ -14,8 +14,8 @@ class Bird {
     this.y = height / 2;
     this.r = 12;
 
-    this.gravity = 0.8;
-    this.lift = -12;
+    this.gravity = 0.6;
+    this.lift = -10;
     this.velocity = 0;
 
     if (brain instanceof NeuralNetwork) {
@@ -37,7 +37,8 @@ class Bird {
     push();
     imageMode(CENTER);
     tint(255, 150);
-    image(green_drago, this.x, this.y, 45, 45)
+    image(green_drago, this.x, this.y, 45, 45);
+    pop();
   }
 
   think(pipes) {
@@ -54,10 +55,10 @@ class Bird {
     if (closest != null) {
       let inputs = [];
       inputs[0] = map(closest.x, this.x, width, 0, 1);
-      inputs[1] = map(closest.top, 0, height, 0, 1);
-      inputs[2] = map(closest.bottom, 0, height, 0, 1);
+      inputs[1] = map(this.y - closest.top, -height, height, 0, 1);
+      inputs[2] = map(closest.bottom - this.y, -height, height, 0, 1);
       inputs[3] = map(this.y, 0, height, 0, 1);
-      inputs[4] = map(this.velocity, -12, 12, 0, 1);
+      inputs[4] = map(this.velocity, -10, 10, 0, 1);
 
       let action = this.brain.predict(inputs);
       if (action[1] > action[0]) {
