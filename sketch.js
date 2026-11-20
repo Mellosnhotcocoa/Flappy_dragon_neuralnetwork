@@ -86,12 +86,13 @@ function draw() {
           }
         }
        }
-      }
-    
     if (counter % 75 == 0) {
       pipes.push(new Pipe());
     }
     counter++;
+    }
+    
+
 
   let tempHighScore = 0;
   if (!runBest) {
