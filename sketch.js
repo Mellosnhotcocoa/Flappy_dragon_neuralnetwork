@@ -11,6 +11,7 @@ let highScore = 0;
 let runBest = false;
 let runBestButton;
 let green_drago;
+let bestBird = null;
 
 function preload() {
   green_drago = loadImage('green_drago.png')    
