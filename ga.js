@@ -23,9 +23,8 @@ function generate(oldBirds) {
   elite.brain = best.brain.copy();
   newBirds.push(elite);
   
-  for (let i = 0; i < oldBirds.length; i++) {
-    let bird = poolSelection(oldBirds);
-    newBirds[i] = bird;
+  for (let i = 1; i < oldBirds.length; i++) {
+    newBirds.push(poolSelection(oldBirds));
   }
   return newBirds;
 }
