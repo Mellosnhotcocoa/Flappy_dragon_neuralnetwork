@@ -144,7 +144,7 @@ class NeuralNetwork {
   mutate(rate) {
     function mutate(val) {
       if (Math.random() < rate) {
-          return val + randomGaussian(0, 0.1);
+          return val + randomGaussian(0, 0.25);
       } else {
         return val;
       }
