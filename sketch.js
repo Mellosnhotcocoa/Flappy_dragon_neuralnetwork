@@ -1,4 +1,4 @@
-let totalPopulation = 200;
+let totalPopulation = 100;
 let activeBirds = [];
 let allBirds = [];
 let pipes = [];
